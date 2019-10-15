@@ -23,7 +23,7 @@ export default new Router({
     },
     {
       path: '/fullcalendar',
-      name: 'fullcalendar',
+      name: 'fullalendar',
       component: () => import('./views/FullCalendar.vue')
     }
   ]
