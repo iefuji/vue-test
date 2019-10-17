@@ -25,11 +25,13 @@ export default {
   data () {
     return {
       calendarPlugins: [ timeGridPlugin, resourceTimeGridPlugin, resourceDayGridPlugin, resourceTimeLinePlugin ],
+      // ヘッダーのボタン位置とか
       header: {
         left: 'today prev,next',
         center: 'title',
-        right: 'dayGridMonth, resourceTimelineMonth, dayGridWeek, resourceTimeGridDay'
+        right: 'dayGridMonth, resourceTimelineMonth, timeGridWeek, resourceTimeGridDay'
       },
+      // ヘルパー名とか
       resources: [
         { id: '1', title: 'staff01' },
         { id: '2', title: 'staff02' },
@@ -53,6 +55,7 @@ export default {
         week: '週',
         day: '日'
       },
+      // 予定の内容
       events: [
         { resourceId: '1', title: 'care1', start: '2019-10-16T08:00', end: '2019-10-16T08:45' }
       ],
@@ -67,7 +70,9 @@ export default {
 
 <template>
   <div class="FullCalendar">
+    <!-- 表示確認用テキスト -->
     <h1>Hellow World</h1>
+    <!-- export default > data > 各項目を設定、デフォルトから上書き -->
     <FullCalendar
       timeFormat="HH:mm"
       locale="ja"
@@ -78,6 +83,7 @@ export default {
       :buttonText="buttonText"
       :resources="resources"
       :events="events"
+      :weekNumbers="true"
  />
   </div>
 </template>
