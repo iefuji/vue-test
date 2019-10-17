@@ -29,7 +29,7 @@ export default {
   data () {
     return {
       calendarPlugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, momentPlugin, resourceTimeGridPlugin, resourceDayGridPlugin ],
-      defaultView: 'resourceDayGridDay',
+      defaultView: 'resourceTimelineDay',
       header: {
         left: 'today prev,next',
         center: 'title',

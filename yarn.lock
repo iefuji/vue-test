@@ -711,12 +711,25 @@
     "@fullcalendar/resource-daygrid" "~4.3.0"
     "@fullcalendar/timegrid" "~4.3.0"
 
+"@fullcalendar/resource-timeline@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/resource-timeline/-/resource-timeline-4.3.0.tgz#4a1c1ce62c5c4174a6ceb6aa69f8ad5ac1b4c401"
+  integrity sha512-FOgrsanEjYGVCzzn4DRIeFGpLyA2apDPZ74snhovBOTsqO9043wNtkH8N6jlhnwIMC7EwNJNbtaY+MgapMBtUw==
+  dependencies:
+    "@fullcalendar/resource-common" "~4.3.0"
+    "@fullcalendar/timeline" "~4.3.0"
+
 "@fullcalendar/timegrid@^4.3.0", "@fullcalendar/timegrid@~4.3.0":
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/@fullcalendar/timegrid/-/timegrid-4.3.0.tgz#bf003499319e5e66135bb7b8d8ed274b1a62ca91"
   integrity sha512-9JCSZbzw2Hi+X893l5X9ViZaWjxh+sDy59o6nKx0gYKwSfs/vKpmk73GBQfKyUv8orkjpnTdPFfeLDZqlzBP4Q==
   dependencies:
     "@fullcalendar/daygrid" "~4.3.0"
+
+"@fullcalendar/timeline@~4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/timeline/-/timeline-4.3.0.tgz#560a7e36ba25f686c7c8cdfbb5f489e9d4441760"
+  integrity sha512-uJ1Q9Kb4ZhxVT1koCiXjTye836d7W+OlIcNM/D2Qo4kmuRSkai4xJlcDHIctf661geEOs6Tgl5QKFdP/s1kKYQ==
 
 "@fullcalendar/vue@^4.3.1":
   version "4.3.1"
@@ -8637,6 +8650,11 @@ vue-eslint-parser@^5.0.0:
     espree "^4.1.0"
     esquery "^1.0.1"
     lodash "^4.17.11"
+
+vue-head@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/vue-head/-/vue-head-2.1.2.tgz#ad3c39f464e3960042b064c00e4739674e61e291"
+  integrity sha512-rE9IOe6pxmMy9nXVTobkByA7l3SUQf29I5fNy0WtfL5AxJ7vLXq3sL+CCtARwiZi/WJZyy32MgsoRbeDsanqhg==
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
