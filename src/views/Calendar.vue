@@ -59,19 +59,20 @@ export default {
       },
       // 予定の内容
       events: [
-        { resourceId: '1', title: 'care1', start: '2019-10-16T08:00', end: '2019-10-16T08:45' },
-        { resourceId: '1', title: 'care1', start: '2019-10-16T09:00', end: '2019-10-16T09:30' },
-        { resourceId: '1', title: 'care1', start: '2019-10-16T10:00', end: '2019-10-16T11:00' },
-        { resourceId: '1', title: 'care1', start: '2019-10-16T11:30', end: '2019-10-16T14:00' },
-        { resourceId: '1', title: 'care1', start: '2019-10-16T14:30', end: '2019-10-16T16:00' },
-        { resourceId: '1', title: 'care1', start: '2019-10-16T16:30', end: '2019-10-16T17:30' },
-        { resourceId: '1', title: 'care1', start: '2019-10-16T18:00', end: '2019-10-16T19:30' },
-        { resourceId: '1', title: 'care1', start: '2019-10-16T20:00', end: '2019-10-16T21:45' },
-        { resourceId: '1', title: 'care1', start: '2019-10-16T22:15', end: '2019-10-16T23:00' },
-        { resourceId: '1', title: 'care1', start: '2019-10-16T23:30', end: '2019-10-16T24:00' }
+        { resourceId: '1', title: 'care1', start: '2019-10-31T08:00', end: '2019-10-31T08:45' },
+        { resourceId: '1', title: 'care1', start: '2019-10-31T09:00', end: '2019-10-31T09:30' },
+        { resourceId: '1', title: 'care1', start: '2019-10-31T10:00', end: '2019-10-31T11:00' },
+        { resourceId: '1', title: 'care1', start: '2019-10-31T11:30', end: '2019-10-31T14:00' },
+        { resourceId: '1', title: 'care1', start: '2019-10-31T14:30', end: '2019-10-31T16:00' },
+        { resourceId: '1', title: 'care1', start: '2019-10-31T16:30', end: '2019-10-31T17:30' },
+        { resourceId: '1', title: 'care1', start: '2019-10-31T18:00', end: '2019-10-31T19:30' },
+        { resourceId: '1', title: 'care1', start: '2019-10-31T20:00', end: '2019-10-31T21:45' },
+        { resourceId: '1', title: 'care1', start: '2019-10-31T22:15', end: '2019-10-31T23:00' },
+        { resourceId: '1', title: 'care1', start: '2019-10-31T23:30', end: '2019-10-31T24:00' }
       ],
       timeFormat: 'HH:mm',
-      slotDuration: '00:05:00',
+      slotLabelFormat: 'HH:mm',
+      slotDuration: '00:30:00',
       snapDuration: '01:00:00',
       schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source'
     }
@@ -105,6 +106,7 @@ export default {
       :weekends="true"
       :slotDuration="slotDuration"
       :snapDuration="snapDuration"
+      :slotLabelFormat="slotLabelFormat"
 />
   </div>
 </template>
@@ -115,5 +117,17 @@ export default {
 @import '~@fullcalendar/daygrid/main.css';
 @import '~@fullcalendar/timegrid/main.css';
 @import '~@fullcalendar/resource-timeline/main.css';
+
+// 土日の色付け
+.fc-sun {
+    color: red;
+    background-color: #fff0f0;
+}
+
+/* 土曜日 */
+.fc-sat {
+    color: blue;
+    background-color: #f0f0ff;
+}
 
 </style>
