@@ -90,6 +90,8 @@ export default {
       timeFormat="HH:mm"
       locale="ja"
       defaultView='timeGridWeek'
+      displayEventTime='true'
+      displayEventEnd='true'
       :plugins="calendarPlugins"
       :datesAboveResources="true"
       :header="header"
