@@ -1,5 +1,6 @@
 <script>
 
+import Vue from 'vue'
 import FullCalendar from '@fullcalendar/vue'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import resourceTimeGridPlugin from '@fullcalendar/resource-timegrid'
@@ -7,6 +8,9 @@ import resourceTimeLinePlugin from '@fullcalendar/resource-timeline'
 import resourceDayGridPlugin from '@fullcalendar/resource-daygrid'
 import momentPlugin from '@fullcalendar/moment'
 import interactionPlugin from '@fullcalendar/interaction'
+import VTooltip from 'v-tooltip'
+
+Vue.use(VTooltip)
 
 export default {
   name: 'fullcalendar',
@@ -82,7 +86,9 @@ export default {
 </script>
 
 <template>
-  <div class="FullCalendar">
+  <div class="text-center">
+    <!-- tooltipのテスト導入 -->
+    <button v-tooltip="'TOPにメッセージが表示されます'">TOP</button>
     <!-- 表示確認用テキスト -->
     <h1>Calendar view test page</h1>
     <!-- export default > data > 各項目を設定、デフォルトから上書き -->
