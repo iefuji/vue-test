@@ -87,11 +87,11 @@ export default {
     <!-- export default > data > 各項目を設定、デフォルトから上書き -->
     <FullCalendar
       schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
-      timeFormat="HH:mm"
       locale="ja"
       defaultView='timeGridWeek'
       displayEventTime='true'
       displayEventEnd='true'
+      :timeFormat="timeFormat"
       :plugins="calendarPlugins"
       :datesAboveResources="true"
       :header="header"
