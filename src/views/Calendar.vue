@@ -5,6 +5,8 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import resourceTimeGridPlugin from '@fullcalendar/resource-timegrid'
 import resourceTimeLinePlugin from '@fullcalendar/resource-timeline'
 import resourceDayGridPlugin from '@fullcalendar/resource-daygrid'
+import momentPlugin from '@fullcalendar/moment'
+import interactionPlugin from '@fullcalendar/interaction'
 
 export default {
   name: 'fullcalendar',
@@ -24,12 +26,12 @@ export default {
   },
   data () {
     return {
-      calendarPlugins: [ timeGridPlugin, resourceTimeGridPlugin, resourceDayGridPlugin, resourceTimeLinePlugin ],
+      calendarPlugins: [ timeGridPlugin, resourceTimeGridPlugin, resourceDayGridPlugin, resourceTimeLinePlugin, momentPlugin, interactionPlugin ],
       // ヘッダーのボタン位置とか
       header: {
         left: 'today prev,next',
         center: 'title',
-        right: 'dayGridMonth, resourceTimelineMonth, timeGridWeek, resourceTimeGridDay'
+        right: 'dayGridMonth, timeGridWeek, resourceTimeGridDay'
       },
       // ヘルパー名とか
       resources: [
@@ -57,11 +59,21 @@ export default {
       },
       // 予定の内容
       events: [
-        { resourceId: '1', title: 'care1', start: '2019-10-16T08:00', end: '2019-10-16T08:45' }
+        { resourceId: '1', title: 'care1', start: '2019-10-16T08:00', end: '2019-10-16T08:45' },
+        { resourceId: '1', title: 'care1', start: '2019-10-16T09:00', end: '2019-10-16T09:30' },
+        { resourceId: '1', title: 'care1', start: '2019-10-16T10:00', end: '2019-10-16T11:00' },
+        { resourceId: '1', title: 'care1', start: '2019-10-16T11:30', end: '2019-10-16T14:00' },
+        { resourceId: '1', title: 'care1', start: '2019-10-16T14:30', end: '2019-10-16T16:00' },
+        { resourceId: '1', title: 'care1', start: '2019-10-16T16:30', end: '2019-10-16T17:30' },
+        { resourceId: '1', title: 'care1', start: '2019-10-16T18:00', end: '2019-10-16T19:30' },
+        { resourceId: '1', title: 'care1', start: '2019-10-16T20:00', end: '2019-10-16T21:45' },
+        { resourceId: '1', title: 'care1', start: '2019-10-16T22:15', end: '2019-10-16T23:00' },
+        { resourceId: '1', title: 'care1', start: '2019-10-16T23:30', end: '2019-10-16T24:00' }
       ],
       timeFormat: 'HH:mm',
-      slotDuration: '00:15:00',
-      snapDuration: '01:00:00'
+      slotDuration: '00:05:00',
+      snapDuration: '01:00:00',
+      schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source'
     }
   }
 }
@@ -71,12 +83,13 @@ export default {
 <template>
   <div class="FullCalendar">
     <!-- 表示確認用テキスト -->
-    <h1>Hellow World</h1>
+    <h1>Calendar view test page</h1>
     <!-- export default > data > 各項目を設定、デフォルトから上書き -->
     <FullCalendar
+      schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
       timeFormat="HH:mm"
       locale="ja"
-      defaultView='resourceTimelineMonth'
+      defaultView='timeGridWeek'
       :plugins="calendarPlugins"
       :datesAboveResources="true"
       :header="header"
@@ -84,7 +97,13 @@ export default {
       :resources="resources"
       :events="events"
       :weekNumbers="true"
- />
+      :editable="true"
+      :selectable="true"
+      :eventLimit="true"
+      :weekends="true"
+      :slotDuration="slotDuration"
+      :snapDuration="snapDuration"
+/>
   </div>
 </template>
 
