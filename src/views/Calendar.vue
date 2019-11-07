@@ -29,13 +29,14 @@ export default {
     }
   },
   data () {
+    const vm = this
     return {
       calendarPlugins: [ timeGridPlugin, resourceTimeGridPlugin, resourceDayGridPlugin, resourceTimeLinePlugin, momentPlugin, interactionPlugin ],
       // ヘッダーのボタン位置とか
       header: {
-        left: 'today prev,next',
+        left: '',
         center: 'title',
-        right: 'dayGridMonth, timeGridWeek, resourceTimeGridDay'
+        right: ''
       },
       // ヘルパー名とか
       resources: [
@@ -55,12 +56,6 @@ export default {
         { id: '14', title: 'staff14' },
         { id: '15', title: 'staff15' }
       ],
-      buttonText: {
-        today: '今日',
-        month: '月',
-        week: '週',
-        day: '日'
-      },
       // 予定の内容
       events: [
         { resourceId: '1', title: 'care1', start: '2019-10-31T08:00', end: '2019-10-31T08:45' },
@@ -74,11 +69,34 @@ export default {
         { resourceId: '1', title: 'care1', start: '2019-10-31T22:15', end: '2019-10-31T23:00' },
         { resourceId: '1', title: 'care1', start: '2019-10-31T23:30', end: '2019-10-31T24:00' }
       ],
-      timeFormat: 'HH:mm',
-      slotLabelFormat: 'HH:mm',
-      slotDuration: '00:30:00',
-      snapDuration: '01:00:00',
-      schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source'
+      buttonText: {
+        today: '今日',
+        month: '月',
+        week: '週',
+        day: '日'
+      },
+      config: {
+        timeFormat: 'HH:mm',
+        slotLabelFormat: 'HH:mm',
+        slotDuration: '00:15:00',
+        snapDuration: '01:00:00',
+        displayEventTime: 'true',
+        displayEventEnd: 'true',
+        datesAboveResources: 'true',
+        weekends: 'true',
+        weekNumbers: 'true',
+
+        eventRender (event, element) {
+          return vm.eventFilter(event, element)
+        }
+      },
+      eventFilter: (evt, el) => true
+    }
+  },
+
+  watch: {
+    eventFilter () {
+      this.$refs.calendar.fireMetod('renderEvents')
     }
   }
 }
@@ -86,34 +104,107 @@ export default {
 </script>
 
 <template>
-  <div class="text-center">
+  <div id="fullcalendar">
     <!-- tooltipのテスト導入 -->
     <button v-tooltip="'TOPにメッセージが表示されます'">TOP</button>
     <!-- 表示確認用テキスト -->
     <h1>Calendar view test page</h1>
     <!-- export default > data > 各項目を設定、デフォルトから上書き -->
-    <FullCalendar
-      schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
-      locale="ja"
-      defaultView='timeGridWeek'
-      displayEventTime='true'
-      displayEventEnd='true'
-      :timeFormat="timeFormat"
-      :plugins="calendarPlugins"
-      :datesAboveResources="true"
-      :header="header"
-      :buttonText="buttonText"
-      :resources="resources"
-      :events="events"
-      :weekNumbers="true"
-      :editable="true"
-      :selectable="true"
-      :eventLimit="true"
-      :weekends="true"
-      :slotDuration="slotDuration"
-      :snapDuration="snapDuration"
-      :slotLabelFormat="slotLabelFormat"
-/>
+    <div id="float_box">
+      <FullCalendar
+        schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
+        locale="ja"
+        defaultView="resourceTimeGridDay"
+        :config="config"
+        :plugins="calendarPlugins"
+        :header="header"
+        :resources="resources"
+        :events="events"
+        :selectable="true"
+        :editable="true"
+        :buttonText="buttonText"
+      />
+    </div>
+    <div id="float_box">
+      <FullCalendar
+        schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
+        locale="ja"
+        defaultView="resourceTimeGridDay"
+        :config="config"
+        :plugins="calendarPlugins"
+        :header="header"
+        :resources="resources"
+        :events="events"
+        :selectable="true"
+        :editable="true"
+        :buttonText="buttonText"
+      />
+      <div></div>
+    </div>
+    <div id="float_box">
+      <FullCalendar
+        schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
+        locale="ja"
+        defaultView="resourceTimeGridDay"
+        :config="config"
+        :plugins="calendarPlugins"
+        :header="header"
+        :resources="resources"
+        :events="events"
+        :selectable="true"
+        :editable="true"
+        :buttonText="buttonText"
+      />
+      <div></div>
+    </div>
+    <div id="float_box">
+      <FullCalendar
+        schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
+        locale="ja"
+        defaultView="resourceTimeGridDay"
+        :config="config"
+        :plugins="calendarPlugins"
+        :header="header"
+        :resources="resources"
+        :events="events"
+        :selectable="true"
+        :editable="true"
+        :buttonText="buttonText"
+      />
+      <div></div>
+    </div>
+    <div id="float_box">
+      <FullCalendar
+        schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
+        locale="ja"
+        defaultView="resourceTimeGridDay"
+        :config="config"
+        :plugins="calendarPlugins"
+        :header="header"
+        :resources="resources"
+        :events="events"
+        :selectable="true"
+        :editable="true"
+        :buttonText="buttonText"
+      />
+      <div></div>
+    </div>
+    <div id="float_box">
+      <FullCalendar
+        schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
+        locale="ja"
+        defaultView="resourceTimeGridDay"
+        :config="config"
+        :plugins="calendarPlugins"
+        :header="header"
+        :resources="resources"
+        :events="events"
+        :selectable="true"
+        :editable="true"
+        :buttonText="buttonText"
+      />
+      <div></div>
+    </div>
   </div>
 </template>
 
@@ -134,6 +225,18 @@ export default {
 .fc-sat {
     color: blue;
     background-color: #f0f0ff;
+}
+
+#fullcalendar {
+  width: 25000;
+  overflow-x: scroll;
+}
+
+#float_box {
+  width: 500px;
+  padding: 10px;
+  margin: auto;
+  float: left;
 }
 
 </style>
