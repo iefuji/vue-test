@@ -104,106 +104,108 @@ export default {
 </script>
 
 <template>
-  <div id="fullcalendar">
+  <div id="scroll">
     <!-- tooltipのテスト導入 -->
     <button v-tooltip="'TOPにメッセージが表示されます'">TOP</button>
     <!-- 表示確認用テキスト -->
     <h1>Calendar view test page</h1>
     <!-- export default > data > 各項目を設定、デフォルトから上書き -->
-    <div id="float_box">
-      <FullCalendar
-        schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
-        locale="ja"
-        defaultView="resourceTimeGridDay"
-        :config="config"
-        :plugins="calendarPlugins"
-        :header="header"
-        :resources="resources"
-        :events="events"
-        :selectable="true"
-        :editable="true"
-        :buttonText="buttonText"
-      />
-    </div>
-    <div id="float_box">
-      <FullCalendar
-        schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
-        locale="ja"
-        defaultView="resourceTimeGridDay"
-        :config="config"
-        :plugins="calendarPlugins"
-        :header="header"
-        :resources="resources"
-        :events="events"
-        :selectable="true"
-        :editable="true"
-        :buttonText="buttonText"
-      />
-      <div></div>
-    </div>
-    <div id="float_box">
-      <FullCalendar
-        schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
-        locale="ja"
-        defaultView="resourceTimeGridDay"
-        :config="config"
-        :plugins="calendarPlugins"
-        :header="header"
-        :resources="resources"
-        :events="events"
-        :selectable="true"
-        :editable="true"
-        :buttonText="buttonText"
-      />
-      <div></div>
-    </div>
-    <div id="float_box">
-      <FullCalendar
-        schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
-        locale="ja"
-        defaultView="resourceTimeGridDay"
-        :config="config"
-        :plugins="calendarPlugins"
-        :header="header"
-        :resources="resources"
-        :events="events"
-        :selectable="true"
-        :editable="true"
-        :buttonText="buttonText"
-      />
-      <div></div>
-    </div>
-    <div id="float_box">
-      <FullCalendar
-        schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
-        locale="ja"
-        defaultView="resourceTimeGridDay"
-        :config="config"
-        :plugins="calendarPlugins"
-        :header="header"
-        :resources="resources"
-        :events="events"
-        :selectable="true"
-        :editable="true"
-        :buttonText="buttonText"
-      />
-      <div></div>
-    </div>
-    <div id="float_box">
-      <FullCalendar
-        schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
-        locale="ja"
-        defaultView="resourceTimeGridDay"
-        :config="config"
-        :plugins="calendarPlugins"
-        :header="header"
-        :resources="resources"
-        :events="events"
-        :selectable="true"
-        :editable="true"
-        :buttonText="buttonText"
-      />
-      <div></div>
+    <div id="fullcalendar">
+      <div id="float_box">
+        <FullCalendar
+          schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
+          locale="ja"
+          defaultView="resourceTimeGridDay"
+          :config="config"
+          :plugins="calendarPlugins"
+          :header="header"
+          :resources="resources"
+          :events="events"
+          :selectable="true"
+          :editable="true"
+          :buttonText="buttonText"
+        />
+      </div>
+      <div id="float_box">
+        <FullCalendar
+          schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
+          locale="ja"
+          defaultView="resourceTimeGridDay"
+          :config="config"
+          :plugins="calendarPlugins"
+          :header="header"
+          :resources="resources"
+          :events="events"
+          :selectable="true"
+          :editable="true"
+          :buttonText="buttonText"
+        />
+        <div></div>
+      </div>
+      <div id="float_box">
+        <FullCalendar
+          schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
+          locale="ja"
+          defaultView="resourceTimeGridDay"
+          :config="config"
+          :plugins="calendarPlugins"
+          :header="header"
+          :resources="resources"
+          :events="events"
+          :selectable="true"
+          :editable="true"
+          :buttonText="buttonText"
+        />
+        <div></div>
+      </div>
+      <div id="float_box">
+        <FullCalendar
+          schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
+          locale="ja"
+          defaultView="resourceTimeGridDay"
+          :config="config"
+          :plugins="calendarPlugins"
+          :header="header"
+          :resources="resources"
+          :events="events"
+          :selectable="true"
+          :editable="true"
+          :buttonText="buttonText"
+        />
+        <div></div>
+      </div>
+      <div id="float_box">
+        <FullCalendar
+          schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
+          locale="ja"
+          defaultView="resourceTimeGridDay"
+          :config="config"
+          :plugins="calendarPlugins"
+          :header="header"
+          :resources="resources"
+          :events="events"
+          :selectable="true"
+          :editable="true"
+          :buttonText="buttonText"
+        />
+        <div></div>
+      </div>
+      <div id="float_box">
+        <FullCalendar
+          schedulerLicenseKey="GPL-My-Project-Is-Open-Source"
+          locale="ja"
+          defaultView="resourceTimeGridDay"
+          :config="config"
+          :plugins="calendarPlugins"
+          :header="header"
+          :resources="resources"
+          :events="events"
+          :selectable="true"
+          :editable="true"
+          :buttonText="buttonText"
+        />
+        <div></div>
+      </div>
     </div>
   </div>
 </template>
@@ -227,16 +229,21 @@ export default {
     background-color: #f0f0ff;
 }
 
-#fullcalendar {
-  width: 25000;
+#scroll {
   overflow-x: scroll;
+  width: auto;
+}
+
+#fullcalendar {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 #float_box {
+  display: inline-block;
   width: 500px;
-  padding: 10px;
-  margin: auto;
-  float: left;
+  margin: 10px;
+  display:inline-block;
 }
 
 </style>
