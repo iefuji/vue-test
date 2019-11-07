@@ -47,7 +47,7 @@ export default {
       },
       // ヘルパー名とか
       resources: [
-        { id: '1', title: 'staff01' },
+        { id: '1', title: 'staff01', width: '100px' },
         { id: '2', title: 'staff02' },
         { id: '3', title: 'staff03' },
         { id: '4', title: 'staff04' },
@@ -152,6 +152,26 @@ export default {
 .fc-sat {
     color: blue;
     background-color: #f0f0ff;
+}
+
+#fullcalendar {
+  /* width: 2500px; */
+}
+
+.fc table{
+    table-layout: auto;
+}
+.fc-view > table{  
+    min-width: 0;
+    width: auto;
+}
+.fc-axis{
+    min-width:50px; /*the width of times column*/
+    width:50px; /*the width of times column*/
+}
+.fc-day,.fc-resource-cell,.fc-content-col{
+    min-width:70px;
+    width:70px;
 }
 
 </style>
